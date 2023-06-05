@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
 })
 export class FirstComponent {
   prenom: string = 'Nathalie';
-  color = 'pink';
+  color = 'red';
   hd = false;
 
   traitement() {
     alert("J'ai été cliqué !");
+  }
+
+  traiterEvent(msg: string) {
+    alert(msg);
   }
 }

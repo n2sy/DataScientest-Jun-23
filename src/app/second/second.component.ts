@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-second',
@@ -7,5 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class SecondComponent {
   @Input() message = 'valeur initalisation';
-  @Input() cl = 'yellow';
+  @Input() cl = 'blue';
+
+  @Output() msgToParent = new EventEmitter();
+
+  sendMsg() {
+    this.msgToParent.emit('Message de la part du Second Component');
+  }
 }
