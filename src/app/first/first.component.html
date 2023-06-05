@@ -1,5 +1,7 @@
-<h3>Je m'appelle {{ prenom }}</h3>
+<h3>Je m'appelle {{ prenom }} </h3>
 
+<input [(ngModel)]="prenom" type="text" class="form-control">
+<br><br>
 <div [hidden]="hd" [style.backgroundColor]="color">
     Formation en Angular
 </div>
