@@ -14,6 +14,7 @@ import { HomeAccountComponent } from './accounts/home-account/home-account.compo
 import { ItemAccountComponent } from './accounts/item-account/item-account.component';
 import { DirectComponent } from './direct/direct.component';
 import { MsWordComponent } from './ms-word/ms-word.component';
+import { ManageServersComponent } from './manage-servers/manage-servers.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MsWordComponent } from './ms-word/ms-word.component';
     ItemAccountComponent,
     DirectComponent,
     MsWordComponent,
+    ManageServersComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
