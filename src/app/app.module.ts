@@ -12,6 +12,8 @@ import { ItemComponent } from './item/item.component';
 import { AddAccountComponent } from './accounts/add-account/add-account.component';
 import { HomeAccountComponent } from './accounts/home-account/home-account.component';
 import { ItemAccountComponent } from './accounts/item-account/item-account.component';
+import { DirectComponent } from './direct/direct.component';
+import { MsWordComponent } from './ms-word/ms-word.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ItemAccountComponent } from './accounts/item-account/item-account.compo
     AddAccountComponent,
     HomeAccountComponent,
     ItemAccountComponent,
+    DirectComponent,
+    MsWordComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

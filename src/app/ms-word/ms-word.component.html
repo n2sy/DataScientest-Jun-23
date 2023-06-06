@@ -1,0 +1,19 @@
+<div [ngStyle]="{
+    'backgroundColor' : bg,
+    'color' : cl,
+    'fontSize' : sz,
+    'fontFamily' : ft
+}">Simulateur de ms-word</div>
+<br>
+
+Background Color :
+<input [(ngModel)]="bg" type="text" class="form-control">
+Text Color :
+<input [(ngModel)]="cl" type="text" class="form-control">
+Text size :
+<input #inp (keyup)="changeSize(inp)" type="number" class="form-control">
+
+Text Font :
+<select [(ngModel)]="ft" class="form-control">
+    <option *ngFor="let f of listFonts" [value]="f"> {{ f }} </option>
+</select>
