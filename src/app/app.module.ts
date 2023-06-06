@@ -11,10 +11,21 @@ import { DetailsComponent } from './details/details.component';
 import { ItemComponent } from './item/item.component';
 import { AddAccountComponent } from './accounts/add-account/add-account.component';
 import { HomeAccountComponent } from './accounts/home-account/home-account.component';
-import { ListAccountComponent } from './accounts/list-account/list-account.component';
+import { ItemAccountComponent } from './accounts/item-account/item-account.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, SecondComponent, CvComponent, ListeComponent, DetailsComponent, ItemComponent, AddAccountComponent, HomeAccountComponent, ListAccountComponent],
+  declarations: [
+    AppComponent,
+    FirstComponent,
+    SecondComponent,
+    CvComponent,
+    ListeComponent,
+    DetailsComponent,
+    ItemComponent,
+    AddAccountComponent,
+    HomeAccountComponent,
+    ItemAccountComponent,
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
