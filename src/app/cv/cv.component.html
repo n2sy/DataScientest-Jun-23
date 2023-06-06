@@ -3,6 +3,6 @@
         <app-liste (sendCandToCv)="recupererCandidat($event)" [allCandidats]="tabCandidats"></app-liste>
     </div>
     <div class="col-md-7">
-        <app-details [selCandidat]="selectedCand"></app-details>
+        <app-details *ngIf="selectedCand" [selCandidat]="selectedCand"></app-details>
     </div>
 </div>
