@@ -9,7 +9,7 @@ import { Candidat } from '../models/candidat';
 export class CvComponent {
   tabCandidats: Candidat[] = [
     new Candidat(1, 'bart', 'simpson', 23, 'ingénieur', 'bart.jpeg'),
-    new Candidat(2, 'homer', 'simpson', 52, 'directeur', 'homer.jpg'),
+    new Candidat(2, 'homer', 'simpson', 52, 'directeur'),
     new Candidat(3, 'lisa', 'simpson', 18, 'etudiante', 'lisa.png'),
   ];
   selectedCand: Candidat;

@@ -1,7 +1,8 @@
-<input type="text" class="form-control">
+<input [(ngModel)]="selectedStatut" type="text" class="form-control">
 <br>
 <ol class="list-group">
-    <li [ngClass]="affecterClasse(serv.statut)" class="list-group-item" *ngFor="let serv of listServers">
+    <li [ngClass]="affecterClasse(serv.statut)" class="list-group-item"
+        *ngFor="let serv of listServers | filter:selectedStatut">
         {{ serv.nom | short:14}} | {{ serv.type | uppercase }} | {{ serv.date_d | date:'fullDate' | uppercase}}
         <span class="badge bg-secondary">{{ serv.statut | titlecase }} </span>
     </li>
