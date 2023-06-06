@@ -1,8 +1,10 @@
 <div class="row">
     <div class="col-md-5">
-        <app-liste (sendCandToCv)="recupererCandidat($event)" [allCandidats]="tabCandidats"></app-liste>
+        <app-liste (sendCandToCv)="recupererCandidat($event)"></app-liste>
     </div>
     <div class="col-md-7">
         <app-details *ngIf="selectedCand" [selCandidat]="selectedCand"></app-details>
     </div>
 </div>
+<button (click)="addNewCandidat()" class="btn btn-info">Add Candidat</button>
+<button (click)="showList()" class="btn btn-primary">Liste vue par le CV</button>
