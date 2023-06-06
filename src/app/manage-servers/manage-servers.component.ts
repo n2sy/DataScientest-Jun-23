@@ -10,25 +10,25 @@ export class ManageServersComponent {
     {
       nom: 'Production server',
       type: 'small',
-      date_d: new Date(2, 4, 2020),
+      date_d: new Date(2020, 4, 2),
       statut: 'critical',
     },
     {
       nom: 'Testing Development server',
       type: 'large',
-      date_d: new Date(2, 4, 2020),
+      date_d: new Date(2020, 4, 2),
       statut: 'stable',
     },
     {
       nom: 'Development server',
       type: 'medium',
-      date_d: new Date(2, 4, 2020),
+      date_d: new Date(2020, 4, 2),
       statut: 'offline',
     },
     {
       nom: 'Nidhal server',
       type: 'small',
-      date_d: new Date(2, 4, 2020),
+      date_d: new Date(2020, 4, 2),
       statut: 'stable',
     },
   ];
