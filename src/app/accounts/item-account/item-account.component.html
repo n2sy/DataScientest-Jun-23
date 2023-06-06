@@ -1,1 +1,11 @@
-<p>item-account works!</p>
+<div class="nidhal">
+    <h4> {{ oneAccount.name }} </h4>
+    <hr>
+    <p>This account is {{ oneAccount.statut }} </p>
+    <button [disabled]="oneAccount.statut == 'active'" (click)="changeStatut('active')" class="btn btn-success">Set to
+        'active'</button>
+    <button [disabled]="oneAccount.statut == 'inactive'" (click)="changeStatut('inactive')" class="btn btn-danger">Set
+        to 'inactive'</button>
+    <button [disabled]="oneAccount.statut == 'unknown'" (click)="changeStatut('unknown')" class="btn btn-warning">Set to
+        'unknown'</button>
+</div>
