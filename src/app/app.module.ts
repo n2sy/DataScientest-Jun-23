@@ -21,6 +21,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { NoAvatarPipe } from './pipes/no-avatar.pipe';
 import { FirstService } from './services/first.service';
 import { RecruterComponent } from './recruter/recruter.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { APP_ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -42,8 +44,9 @@ import { RecruterComponent } from './recruter/recruter.component';
     FilterPipe,
     NoAvatarPipe,
     RecruterComponent,
+    AccueilComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, APP_ROUTING],
   providers: [],
   bootstrap: [AppComponent],
 })
