@@ -11,6 +11,10 @@ export class ListCandidatsService {
     new Candidat(3, 'lisa', 'simpson', 18, 'etudiante', 'lisa.png'),
   ];
 
+  getCandidatById(id) {
+    return this.allCandidats.find((cand) => cand._id == id);
+  }
+
   getAllCandidats() {
     return this.allCandidats;
   }
