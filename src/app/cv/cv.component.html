@@ -4,6 +4,8 @@
     </div>
     <div class="col-md-7">
         <app-details *ngIf="selectedCand" [selCandidat]="selectedCand"></app-details>
+        <router-outlet></router-outlet>
+
     </div>
 </div>
 <app-recruter></app-recruter>
