@@ -1,8 +1,13 @@
-<h2> Formation En Angular chez DataScientest </h2>
-<button (click)="goToCv()" class="btn btn-primary">Go To CV</button>
-<button (click)="goToAccounts()" class="btn btn-warning">Go To Accounts</button>
+<div class="contour">
+    <h2> Formation En Angular chez DataScientest </h2>
+    <br><br>
+    <h4>Navigation côté typescript</h4>
+    <button (click)="goToCv()" class="btn btn-danger">Go To CV</button>
+    <button (click)="goToAccounts()" class="btn btn-warning">Go To Accounts</button>
 
-<hr>
+    <hr>
+    <h4>Navigation côté template</h4>
+    <button routerLink="/ms-word" class="btn btn-success">Go To Ms-Word</button>
+    <button [routerLink]="['/servers']" class="btn btn-info">Go To Servers</button>
 
-<button routerLink="/ms-word" class="btn btn-success">Go To Ms-Word</button>
-<button [routerLink]="['/servers']" class="btn btn-info">Go To Servers</button>
+</div>

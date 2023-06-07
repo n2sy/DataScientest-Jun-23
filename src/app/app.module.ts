@@ -23,6 +23,7 @@ import { FirstService } from './services/first.service';
 import { RecruterComponent } from './recruter/recruter.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { APP_ROUTING } from './app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { APP_ROUTING } from './app.routing';
     NoAvatarPipe,
     RecruterComponent,
     AccueilComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, FormsModule, APP_ROUTING],
   providers: [],
