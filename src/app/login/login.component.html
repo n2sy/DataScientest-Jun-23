@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-8">
-        <form #f="ngForm">
+        <form #f="ngForm" (ngSubmit)="submitHandler(f)">
             <label for="adresseMail">Login</label>
             <input #inpLogin="ngModel" type="text" class="form-control" required email ngModel name="login"
                 id="adresseMail">
@@ -11,22 +11,38 @@
             <label for="">Mot de passe</label>
             <input type="text" minlength="4" class="form-control" ngModel name="password">
 
-            <label for="">Langage préféré</label>
-            <select [ngModel]="defaultLanguage" name="language" class="form-control">
-                <option value=""></option>
-                <option value="js">Javascript</option>
-                <option value="java">Java</option>
-                <option value="php">Php</option>
-            </select>
+            <div #divInfos="ngModelGroup" ngModelGroup="infos">
+                <label for="">Langage préféré</label>
+                <select [ngModel]="defaultLanguage" name="language" class="form-control">
+                    <option value=""></option>
+                    <option value="js">Javascript</option>
+                    <option value="java">Java</option>
+                    <option value="php">Php</option>
+                </select>
 
-            Default Language = {{ defaultLanguage }}
 
-            <label for="">Commentaire</label>
-            <textarea [(ngModel)]="myComment" name="commentaire" cols="5" rows="4" class="form-control"></textarea>
 
-            myComment = {{ myComment}}
+                Default Language = {{ defaultLanguage }}
 
-            <button (click)="submitHandler(f)" type="submit" class="btn btn-info">Se connecter</button>
+                <label for="">Commentaire</label>
+                <textarea [(ngModel)]="myComment" name="commentaire" cols="5" rows="4" class="form-control"></textarea>
+
+                myComment = {{ myComment}}
+
+            </div>
+
+            <label>Gestion des erreurs</label>
+            <input #inpError="ngModel" type="text" class="form-control" required minlength="5" pattern="nidhal" ngModel
+                name="erreurs">
+            <div *ngIf="inpError.invalid" class="alert alert-danger">
+                <p *ngIf="inpError.errors['required']">Ce champ est obligatoire</p>
+                <p *ngIf="inpError.errors['minlength']">Le nombre minimal de caractères est 5</p>
+                <p *ngIf="inpError.errors['pattern']">Le pattern est "nidhal"</p>
+            </div>
+
+
+            <button type="submit" class="btn btn-info">Se connecter</button>
+            <button (click)="onReset(f)" class="btn btn-info">Réinitialiser</button>
 
             <pre>
             {{ f.value | json }}

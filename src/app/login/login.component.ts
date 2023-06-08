@@ -12,4 +12,8 @@ export class LoginComponent {
   submitHandler(f: NgForm) {
     console.log(f);
   }
+
+  onReset(f: NgForm) {
+    f.reset();
+  }
 }
