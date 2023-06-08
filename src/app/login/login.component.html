@@ -1,8 +1,10 @@
 <div class="row">
     <div class="col-md-8">
-        <form #f="ngForm" (ngSubmit)="submitHandler(f)">
+        <div *ngIf="showError" class="alert alert-danger">Login et/ou mot de passe invalide(s)</div>
+
+        <form #f="ngForm" (ngSubmit)="onLogin(f)">
             <label for="adresseMail">Login</label>
-            <input #inpLogin="ngModel" type="text" class="form-control" required email ngModel name="login"
+            <input #inpLogin="ngModel" type="text" class="form-control" required email ngModel name="email"
                 id="adresseMail">
 
             <div *ngIf="inpLogin.invalid && inpLogin.dirty" class="alert alert-danger">Veuillez saisir une adresse mail

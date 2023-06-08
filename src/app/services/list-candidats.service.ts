@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Candidat } from '../models/candidat';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({

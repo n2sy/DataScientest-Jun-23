@@ -9,6 +9,7 @@ import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { NoTokenGuard } from './no-token.guard';
 
 const myRoutes: Routes = [
   //Routes avec children
@@ -16,10 +17,14 @@ const myRoutes: Routes = [
   {
     path: 'cv',
     children: [
-        { path: '', component: CvComponent },
-      { path: 'add', component: AddComponent },
+      { path: '', component: CvComponent },
+      { path: 'add', component: AddComponent, canActivate: [NoTokenGuard] },
       { path: ':id', component: InfosComponent },
-      { path: ':id/edit', component: EditComponent },
+      {
+        path: ':id/edit',
+        component: EditComponent,
+        canActivate: [NoTokenGuard],
+      },
     ],
   },
   { path: 'accounts', component: HomeAccountComponent },
