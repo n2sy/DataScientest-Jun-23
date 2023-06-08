@@ -19,10 +19,9 @@ export class ListCandidatsService {
     return this.allCandidats;
   }
 
-  addCandidat() {
-    this.allCandidats.push(
-      new Candidat(4, 'NEW', 'CANDIDAT', 18, 'etudiante', 'lisa.png')
-    );
+  addCandidat(newC) {
+    newC._id = this.allCandidats[this.allCandidats.length - 1]._id + 1;
+    this.allCandidats.push(newC);
   }
 
   constructor() {}
