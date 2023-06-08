@@ -17,14 +17,27 @@ export class EditComponent {
   ) {}
 
   ngOnInit() {
-    // V1 avec snapshot
-    this.candidatToEdit = this.candSer.getCandidatById(
-      this.activatedRoute.snapshot.paramMap.get('id')
-    );
+    this.candSer
+      .getCandidatByIdAPI(this.activatedRoute.snapshot.paramMap.get('id'))
+      .subscribe({
+        next: (response: Candidat) => {
+          this.candidatToEdit = response;
+        },
+        error: (err) => {
+          alert('Ce candidat est introuvable');
+        },
+      });
   }
 
   updateHandler() {
-    this.candSer.updateCandidat(this.candidatToEdit);
-    this.router.navigateByUrl('/cv');
+    this.candSer.updateCandidatAPI(this.candidatToEdit).subscribe({
+      next: (response) => {
+        alert(response['message']);
+        this.router.navigateByUrl('/cv');
+      },
+      error: (err) => {
+        alert("Ce candidat n'a pas pu être mis à jour");
+      },
+    });
   }
 }

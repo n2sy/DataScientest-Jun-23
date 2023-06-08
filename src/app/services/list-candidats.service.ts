@@ -20,8 +20,8 @@ export class ListCandidatsService {
     return this.allCandidats.find((cand) => cand._id == id);
   }
 
-  getCandidatByIdAPI(id) {
-    return this.http.get();
+  getCandidatByIdAPI(id): Observable<Candidat> {
+    return this.http.get<Candidat>(`${this.link}/${id}`);
   }
 
   getAllCandidats() {
@@ -37,13 +37,25 @@ export class ListCandidatsService {
     this.allCandidats.push(newC);
   }
 
+  addCandidatAPI(newC) {
+    return this.http.post(this.link, newC);
+  }
+
   deleteCandidat(dCand) {
     let i = this.allCandidats.indexOf(dCand);
     this.allCandidats.splice(i, 1);
   }
 
+  deleteCandidatAPI(dCand) {
+    return this.http.delete(`${this.link}/${dCand._id}`);
+  }
+
   updateCandidat(uCand) {
     let i = this.allCandidats.indexOf(uCand);
     this.allCandidats[i] = uCand;
+  }
+
+  updateCandidatAPI(uCand) {
+    return this.http.put(`${this.link}/${uCand._id}`, uCand);
   }
 }
