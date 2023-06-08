@@ -11,7 +11,7 @@
             <label for="">Mot de passe</label>
             <input type="text" minlength="4" class="form-control" ngModel name="password">
 
-            <div #divInfos="ngModelGroup" ngModelGroup="infos">
+            <!-- <div #divInfos="ngModelGroup" ngModelGroup="infos">
                 <label for="">Langage préféré</label>
                 <select [ngModel]="defaultLanguage" name="language" class="form-control">
                     <option value=""></option>
@@ -39,14 +39,14 @@
                 <p *ngIf="inpError.errors['minlength']">Le nombre minimal de caractères est 5</p>
                 <p *ngIf="inpError.errors['pattern']">Le pattern est "nidhal"</p>
             </div>
-
-
+ -->
+            <br>
             <button type="submit" class="btn btn-info">Se connecter</button>
-            <button (click)="onReset(f)" class="btn btn-info">Réinitialiser</button>
+            <!-- <button (click)="onReset(f)" class="btn btn-info">Réinitialiser</button>
 
             <pre>
             {{ f.value | json }}
-            </pre>
+            </pre> -->
         </form>
     </div>
 </div>

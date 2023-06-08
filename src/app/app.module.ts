@@ -29,6 +29,7 @@ import { EditComponent } from './edit/edit.component';
 import { AddComponent } from './add/add.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { LoginComponent } from './login/login.component';
     NotFoundComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, FormsModule, APP_ROUTING],
+  imports: [BrowserModule, FormsModule, APP_ROUTING, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

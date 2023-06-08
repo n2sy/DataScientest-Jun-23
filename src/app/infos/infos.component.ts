@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ListCandidatsService } from '../services/list-candidats.service';
 import { Candidat } from '../models/candidat';
 
@@ -13,7 +13,8 @@ export class InfosComponent {
   selectedCandidat: Candidat;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private candSer: ListCandidatsService
+    private candSer: ListCandidatsService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -28,5 +29,12 @@ export class InfosComponent {
         this.selectedCandidat = this.candSer.getCandidatById(p.get('id'));
       },
     });
+  }
+
+  deleteHandler() {
+    if (confirm('Etes-vous sur de vouloir supprimer ce candidat ?')) {
+      this.candSer.deleteCandidat(this.selectedCandidat);
+      this.router.navigateByUrl('/cv');
+    }
   }
 }
