@@ -8,21 +8,22 @@ import { InfosComponent } from './infos/infos.component';
 import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 const myRoutes: Routes = [
   //Routes avec children
   { path: '', component: AccueilComponent },
   {
     path: 'cv',
-    component: CvComponent,
     children: [
-      //   { path: '', component: CvComponent },
+        { path: '', component: CvComponent },
       { path: 'add', component: AddComponent },
       { path: ':id', component: InfosComponent },
       { path: ':id/edit', component: EditComponent },
     ],
   },
   { path: 'accounts', component: HomeAccountComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'ms-word', component: MsWordComponent },
   {
     path: 'servers',
